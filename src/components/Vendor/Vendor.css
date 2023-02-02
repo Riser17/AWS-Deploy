@@ -1,0 +1,55 @@
+.recurit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px;
+    min-height: 100vh;
+   
+}
+
+.option-main {
+    background: #287bff;
+    
+    position: relative;
+    width: 320px;
+    height: 350px;
+    margin: 30px;
+    border-radius: 20px;
+    border-bottom-left-radius: 160px;
+    border-bottom-right-radius: 160px;
+    box-shadow: 0 15px 0 #fff,
+            inset 0 -15px 0 rgba(255, 255, 255, 0.24),
+            0 45px 0 rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+     
+}
+
+
+.option-main:nth-child(1) {
+    background: linear-gradient(to bottom, #ff2ae0, #645bf6);
+}
+
+.option-main:nth-child(2) {
+    background: linear-gradient(to bottom, #ffec61, #f321d7);
+}
+
+
+
+
+
+.option-main .content {
+    position: absolute;
+    width: 100%;
+    padding: 30px;
+    padding-top: 150px;
+    text-align: center;
+}
+
+.option-main .content h2 {
+    font-size: 1.8em;
+    color: #fff;
+   
+}
+
+

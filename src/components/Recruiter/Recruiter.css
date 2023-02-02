@@ -1,0 +1,153 @@
+
+
+.main1 {
+  width: 100%;
+  display: flex;
+  justify-content: initial;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 0 1%;
+}
+
+.abs-btn{
+  position: fixed;
+  bottom: 4rem;
+  right: 2rem;
+  width: 250px;
+  background-color: #24a0ed;
+  border: none;
+  border-radius: 0;
+  
+}
+.abs-btn:hover{
+  background-color: #24a0ed;
+}
+
+.allCard{
+  margin: auto;
+  width: 20%;
+  height: 250px;
+}
+
+.tech-head {  
+  border: none;
+  background-color: var(--lightgreen);
+  box-shadow: 0px 40px 46px var(--lightgreen);
+  cursor: pointer;
+}
+
+
+.tech-head:hover .linear-wipe{
+  text-align: center;
+  background: linear-gradient(to right, #FFF 20%,rgb(129, 240, 175) 40%, rgb(129, 240, 175) 60%, #FFF 80%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: shine 2s linear infinite;
+          animation: shine 2s linear infinite;
+}
+
+.tech-head .tech-title{
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+  color: rgb(255, 255, 255);
+  margin-top: -113px;
+  height: 40px;
+}
+
+@-webkit-keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* .card:nth-child(1){
+  background-color:  #e3e7ea;
+}
+.card:nth-child(2){
+  background-color:  #2185d1;
+}
+.card:nth-child(3){
+  background-color:  #ffbf34;
+}
+.card:nth-child(4){
+  background-color:  #e3e7ea;
+} */
+.tech-head:active {
+  box-shadow: -3px -3px 7px #f5f5f5 inset, 3px 3px 7px #bbc3cc inset;
+  font-size: 16px;
+  user-select: none;
+}
+
+.tech-head .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.tech-head .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+
+
+/* .card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+} */
+.tech-head:active {
+  box-shadow: -3px -3px 7px #f5f5f5 inset, 3px 3px 7px #bbc3cc inset;
+  font-size: 16px;
+  user-select: none;
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .main1 {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+  .tech-head{
+    margin: 25px 20px;
+    width: 100%;
+  }
+}
+
+
+/*
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  transition: 0.4s;
+}
+*/

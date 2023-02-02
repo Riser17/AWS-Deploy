@@ -1,0 +1,51 @@
+.modal-title{
+    color: brown;
+}
+
+.modal-dialog{
+    width: 90% !important;
+    max-width: 90% !important;
+}
+.col-form-label{
+    text-align: start;
+}
+
+.form-group .col-form-label:first-child{
+    font-weight: bolder;
+}
+.modal-body .row .col-sm-9{
+    text-align: start;
+}
+
+.all-resume-container{
+    max-width: 100%;
+    padding: 0% !important;
+}
+#data_skill{
+    text-align: start;
+}
+.viewbtn{
+   vertical-align: middle !important;   
+}
+
+
+/* Filter */
+.notice_select{
+    width: 150px;
+    color: black;
+    text-align: start;
+}
+.rmsc {
+    --rmsc-main: #ffffff !important;
+    --rmsc-h: 26px !important;
+    --rmsc-gray: rgb(0, 0, 0) !important;
+}
+.rmsc .dropdown-container {
+    border-radius: 0px !important;
+}
+
+@media (min-width:480px) and (max-width:768px) {
+
+
+    
+}
