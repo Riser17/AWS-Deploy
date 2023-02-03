@@ -1,6 +1,7 @@
 import {createContext, useState, useEffect} from 'react';
 import axios from 'axios'
-const apiUrl = "https://server-cv.vercel.app"
+import {useNavigate} from "react-router-dom"
+const apiUrl = "https://54.160.72.194:9090"
 
 export const UserContext = createContext();
 
@@ -13,6 +14,7 @@ const UserContextProvider =(props)=>{
 	const [vendorData, setVendorData] = useState([]); 
   const [userdata, setUserData] = useState('');
   const [resourceData, setResourceData] = useState([]); 
+  const history = useNavigate();
 
    const vendor = [{
         label : 'New Vendor',
@@ -71,6 +73,10 @@ const UserContextProvider =(props)=>{
         const data = await res.json();
     
         if (data.status === 401 || !data) {
+      localStorage.removeItem("usersdatatoken");
+console.log('hadkjbch');
+setLoginData(false)
+          history("/login");
         } else {
           setLoginData(data);
           //history("/dash");
