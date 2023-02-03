@@ -26,10 +26,11 @@ function App() {
 
   const {logindata } = useContext(UserContext)
 
-  const [local, setLocal] = useState(
-    localStorage.getItem('usersdatatoken')
-  );
+ let local = localStorage.getItem('usersdatatoken')
+ 
+  
   return (
+   
 
 
 <div className="App">
