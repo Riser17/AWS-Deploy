@@ -1,6 +1,6 @@
 import {createContext, useState, useEffect} from 'react';
 import axios from 'axios'
-//const apiUrl = "https://server-cv.vercel.app/"
+//const apiUrl = "https://server-cv.vercel.app"
 
 export const UserContext = createContext();
 
