@@ -27,14 +27,12 @@ function App() {
   const {logindata } = useContext(UserContext)
 
 const [local, setLocal] = useState(    
-  localStorage.getItem('usersdatatoken')  ); 
+  localStorage.getItem('usersdatatoken')); 
   
-  let jwtToken =  localStorage.getItem('usersdatatoken')  console.log(jwtToken);
+  let jwtToken =  localStorage.getItem('usersdatatoken');
  
-  
-  return (
-   
 
+  return (
 
 <div className="App">
     <>
