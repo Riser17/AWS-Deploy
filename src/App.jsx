@@ -26,7 +26,10 @@ function App() {
 
   const {logindata } = useContext(UserContext)
 
- let local = localStorage.getItem('usersdatatoken')
+const [local, setLocal] = useState(    
+  localStorage.getItem('usersdatatoken')  ); 
+  
+  let jwtToken =  localStorage.getItem('usersdatatoken')  console.log(jwtToken);
  
   
   return (
@@ -40,18 +43,18 @@ function App() {
    
      
       <Routes>
-        <Route path="/" element={local? <Navigate to ='/dash' /> : <Login  setLocal={setLocal}/> } />
-        <Route path="/login" element={local? <Navigate to ='/dash' /> : <Login setLocal={setLocal}/>} />
-        <Route path="/dash/register" element={local? <Register /> : <Navigate to ='/login' />} />
-        <Route path="/dash" element={local? <Land /> : <Navigate to ='/login' />} />
-        <Route exact path="/dash/recuriter/:jobpostgrp" element={local? <DataGrid /> : <Navigate to ='/login' />} />
-        <Route exact path="/dash/vendor" element={local? <Vendor/> : <Navigate to ='/login' />} />
-        <Route exact path="/dash/recuriter" element={local? <Home /> :  <Navigate to ='/login' />} />
-        <Route exact path="/dash/vendor/existingvendor" element={local? <Exitvendor /> :  <Navigate to ='/login' />}/>
-        <Route exact path="/dash/vendor/newvendor" element={local? <Newvendor /> :  <Navigate to ='/login' />} />
-        <Route exact path="/dash/resources" element={local? <Resources /> :  <Navigate to ='/login' />} />
-        <Route exact path="/dash/resources/allresources" element={local? <ExistingResources /> :  <Navigate to ='/login' />}/>
-        <Route exact path="/dash/resources/addresource" element={local? <NewResource /> :  <Navigate to ='/login' />} />
+        <Route path="/" element={jwtToken? <Navigate to ='/dash' /> : <Login  setLocal={setLocal}/> } />
+        <Route path="/login" element={jwtToken? <Navigate to ='/dash' /> : <Login setLocal={setLocal}/>} />
+        <Route path="/dash/register" element={jwtToken? <Register /> : <Navigate to ='/login' />} />
+        <Route path="/dash" element={jwtToken? <Land /> : <Navigate to ='/login' />} />
+        <Route exact path="/dash/recuriter/:jobpostgrp" element={jwtToken? <DataGrid /> : <Navigate to ='/login' />} />
+        <Route exact path="/dash/vendor" element={jwtToken? <Vendor/> : <Navigate to ='/login' />} />
+        <Route exact path="/dash/recuriter" element={jwtToken? <Home /> :  <Navigate to ='/login' />} />
+        <Route exact path="/dash/vendor/existingvendor" element={jwtToken? <Exitvendor /> :  <Navigate to ='/login' />}/>
+        <Route exact path="/dash/vendor/newvendor" element={jwtToken? <Newvendor /> :  <Navigate to ='/login' />} />
+        <Route exact path="/dash/resources" element={jwtToken? <Resources /> :  <Navigate to ='/login' />} />
+        <Route exact path="/dash/resources/allresources" element={jwtToken? <ExistingResources /> :  <Navigate to ='/login' />}/>
+        <Route exact path="/dash/resources/addresource" element={jwtToken? <NewResource /> :  <Navigate to ='/login' />} />
         <Route path="*" element={<Error />} />
       </Routes>
     
