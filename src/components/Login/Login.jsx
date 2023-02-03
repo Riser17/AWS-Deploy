@@ -48,7 +48,7 @@ const Login = ({setLocal}) => {
                 position: "top-center"
             });
         } else {
-            const data = await fetch("/api/login",{
+            const data = await fetch("https://server-cv.vercel.app/api/login",{
                 method:"POST",
                 withCredentials: true,
                 headers:{
