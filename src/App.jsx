@@ -8,19 +8,19 @@ import {
 
 } from "react-router-dom";
 
-const DataGrid = lazy(()=> import('./components/DataGrid/DataGrid'));
-const Home = lazy(()=> import('./components/Recruiter/Recruiter'));
-const Navbar = lazy(()=> import('./components/Header/Navbar'));
-const Login = lazy(()=> import('./components/Login/Login'));
-const Register = lazy(()=> import('./components/SignUp/Register'));
-const Land = lazy(()=> import('./components/Land'));
-const Error = lazy(()=> import('./components/Error/Error'));
-const Vendor = lazy(()=> import('./components/Vendor/Vendor'));
-const Exitvendor = lazy(()=> import('./components/Vendor/ExistingVendor/Exitvendor'));
-const Newvendor = lazy(()=> import('./components/Vendor/NewVendor/Newvendor'));
-const Resource = lazy(()=> import('./components/Resources/Resources'));
-const ExistingResources = lazy(()=> import('./components/Resources/ExistingResources'));
-const NewResource = lazy(()=> import('./components/Resources/NewResource'));
+import DataGrid from './components/DataGrid/DataGrid';
+import Home from './components/Recruiter/Recruiter';
+import Navbar from './components/Header/Navbar';
+import Login from './components/Login/Login';
+import Register from './components/SignUp/Register'
+import Land from './components/Land';
+import Error from './components/Error/Error';
+import Vendor from './components/Vendor/Vendor';
+import Exitvendor from './components/Vendor/ExistingVendor/Exitvendor';
+import Newvendor from './components/Vendor/NewVendor/Newvendor';
+ import Resources from './components/Resources/Resources';
+ import ExistingResources from './components/Resources/ExistingResources';
+import NewResource from './components/Resources/NewResource';
 
 function App() {
 
@@ -34,26 +34,26 @@ function App() {
 
 <div className="App">
     <>
-    <Suspense>
+   
       <Navbar setLocal={setLocal}/>
-    </Suspense>
-      <Suspense>
+   
+     
       <Routes>
-        <Route path="/" element={<Suspense>{local? <Navigate to ='/dash' /> : <Login  setLocal={setLocal}/> }</Suspense>} />
-        <Route path="/login" element={<Suspense>{local? <Navigate to ='/dash' /> : <Login setLocal={setLocal}/>}</Suspense>} />
-        <Route path="/dash/register" element={<Suspense>{local? <Register /> : <Navigate to ='/login' />}</Suspense>} />
-        <Route path="/dash" element={<Suspense>{local? <Land /> : <Navigate to ='/login' />}</Suspense>} />
-        <Route exact path="/dash/recuriter/:jobpostgrp" element={<Suspense>{local? <DataGrid /> : <Navigate to ='/login' />}</Suspense>} />
-        <Route exact path="/dash/vendor" element={<Suspense>{local? <Vendor/> : <Navigate to ='/login' />}</Suspense>} />
-        <Route exact path="/dash/recuriter" element={<Suspense>{local? <Home /> :  <Navigate to ='/login' />}</Suspense>} />
-        <Route exact path="/dash/vendor/existingvendor" element={<Suspense>{local? <Exitvendor /> :  <Navigate to ='/login' />}</Suspense>}/>
-        <Route exact path="/dash/vendor/newvendor" element={<Suspense>{local? <Newvendor /> :  <Navigate to ='/login' />}</Suspense>} />
-        <Route exact path="/dash/resources" element={<Suspense>{local? <Resource /> :  <Navigate to ='/login' />}</Suspense>} />
-        <Route exact path="/dash/resources/allresources" element={<Suspense>{local? <ExistingResources /> :  <Navigate to ='/login' />}</Suspense>}/>
-        <Route exact path="/dash/resources/addresource" element={<Suspense>{local? <NewResource /> :  <Navigate to ='/login' />}</Suspense>} />
-        <Route path="*" element={<Suspense><Error /></Suspense>} />
+        <Route path="/" element={local? <Navigate to ='/dash' /> : <Login  setLocal={setLocal}/> } />
+        <Route path="/login" element={local? <Navigate to ='/dash' /> : <Login setLocal={setLocal}/>} />
+        <Route path="/dash/register" element={local? <Register /> : <Navigate to ='/login' />} />
+        <Route path="/dash" element={local? <Land /> : <Navigate to ='/login' />} />
+        <Route exact path="/dash/recuriter/:jobpostgrp" element={local? <DataGrid /> : <Navigate to ='/login' />} />
+        <Route exact path="/dash/vendor" element={local? <Vendor/> : <Navigate to ='/login' />} />
+        <Route exact path="/dash/recuriter" element={local? <Home /> :  <Navigate to ='/login' />} />
+        <Route exact path="/dash/vendor/existingvendor" element={local? <Exitvendor /> :  <Navigate to ='/login' />}/>
+        <Route exact path="/dash/vendor/newvendor" element={local? <Newvendor /> :  <Navigate to ='/login' />} />
+        <Route exact path="/dash/resources" element={local? <Resources /> :  <Navigate to ='/login' />} />
+        <Route exact path="/dash/resources/allresources" element={local? <ExistingResources /> :  <Navigate to ='/login' />}/>
+        <Route exact path="/dash/resources/addresource" element={local? <NewResource /> :  <Navigate to ='/login' />} />
+        <Route path="*" element={<Error />} />
       </Routes>
-      </Suspense>
+    
     </>
 </div>
   );
