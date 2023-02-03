@@ -1,6 +1,6 @@
 import {createContext, useState, useEffect} from 'react';
 import axios from 'axios'
-//const apiUrl = "https://server-cv.vercel.app"
+const apiUrl = "https://server-cv.vercel.app"
 
 export const UserContext = createContext();
 
@@ -44,7 +44,7 @@ const UserContextProvider =(props)=>{
       const getUsersData = async() =>{
         let token = localStorage.getItem("usersdatatoken");
           try{
-             const res= await axios.get('/api/getuserdata', {
+             const res= await axios.get(apiUrl + '/api/getuserdata', {
               headers: {
                 "Content-Type": "application/json",
                 "Authorization": token
@@ -61,7 +61,7 @@ const UserContextProvider =(props)=>{
     const DashboardValid = async () => {
 
         let token = localStorage.getItem("usersdatatoken");
-        const res = await fetch("/api/validuser", {
+        const res = await fetch(apiUrl + "/api/validuser", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -81,7 +81,7 @@ const UserContextProvider =(props)=>{
       let token = localStorage.getItem("usersdatatoken");
       var res;
         try{
-            res= await axios.post('/api/newjbpstgrp', jbgrp, {
+            res= await axios.post(apiUrl + '/api/newjbpstgrp', jbgrp, {
               headers: {
                 "Content-Type": "application/json",
                 "Authorization": token
@@ -100,7 +100,7 @@ const UserContextProvider =(props)=>{
     const getdatas = async() =>{
       let token = localStorage.getItem("usersdatatoken");
         try{
-           const res= await axios.get('/api/getJobpostgrps', {
+           const res= await axios.get(apiUrl + '/api/getJobpostgrps', {
             headers: {
               "Content-Type": "application/json",
               "Authorization": token
@@ -116,7 +116,7 @@ const UserContextProvider =(props)=>{
     const Resumedata = async(body)=>{
       let token = localStorage.getItem("usersdatatoken");
         try{
-            const res= await axios.post('/api/leadscv', body, {
+            const res= await axios.post(apiUrl + '/api/leadscv', body, {
               headers: {
                 "Content-Type": "application/json",
                 "Authorization": token
@@ -133,7 +133,7 @@ const UserContextProvider =(props)=>{
     const Newvendors = async (body1) => {
       let token = localStorage.getItem("usersdatatoken");
         try {
-            const res1 = await axios.post('/api/newdata', body1, {
+            const res1 = await axios.post(apiUrl + '/api/newdata', body1, {
               headers: {
                 "Content-Type": "application/json",
                 "Authorization": token
@@ -149,7 +149,7 @@ const UserContextProvider =(props)=>{
       console.log(body1);
       let token = localStorage.getItem("usersdatatoken");
         try {
-            const res1 = await axios.post('/api/addresource', body1, {
+            const res1 = await axios.post(apiUrl + '/api/addresource', body1, {
               headers: {
                 "Content-Type": "application/json",
                 "Authorization": token
@@ -164,7 +164,7 @@ const UserContextProvider =(props)=>{
     const getVendorData = async() =>{
       let token = localStorage.getItem("usersdatatoken");
         try{
-           const res= await axios.get('/api/getVendorData', {
+           const res= await axios.get(apiUrl + '/api/getVendorData', {
             headers: {
               "Content-Type": "application/json",
               "Authorization": token
@@ -180,7 +180,7 @@ const UserContextProvider =(props)=>{
     const getResourceData = async() =>{
       let token = localStorage.getItem("usersdatatoken");
         try{
-           const res= await axios.get('/api/getresources', {
+           const res= await axios.get(apiUrl + '/api/getresources', {
             headers: {
               "Content-Type": "application/json",
               "Authorization": token
