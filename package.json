@@ -31,5 +31,5 @@
     "@vitejs/plugin-react": "^3.0.0",
     "vite": "^4.0.0"
   },
-  "proxy": "http://localhost:9090"
+  "proxy": "http://54.160.72.194:9090"
 }
