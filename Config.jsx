@@ -1,1 +1,1 @@
-export const apiUrl = 'https://server-cv.vercel.app'
+export const apiUrl = 'http://localhost:9090'

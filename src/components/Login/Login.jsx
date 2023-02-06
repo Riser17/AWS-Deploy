@@ -1,8 +1,11 @@
 import React, { useState, useContext } from 'react'
 import {useNavigate} from "react-router-dom"
+import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import {UserContext} from '../../Context/UseContext';
 import "../mix.css"
+
+const apiUrl = "http://localhost:9090"
 
 const Login = ({setLocal}) => {
     const {DashboardValid, setLoginData } = useContext(UserContext);
@@ -48,20 +51,24 @@ const Login = ({setLocal}) => {
                 position: "top-center"
             });
         } else {
-            const data = await fetch("/api/login/",{
-                method:"POST",
-                withCredentials: true,
-                headers:{
-                    "Content-Type":"application/json",
-                },
-                body:JSON.stringify({
-                     email, password
-                })
-            });
+            // const data = await fetch("/api/login/",{
+            //     method:"POST",
+            //     withCredentials: true,
+            //     headers:{
+            //         "Content-Type":"application/json",
+            //     },
+            //     body:JSON.stringify({
+            //          email, password
+            //     })
+            // });
+            const logdata= await axios.post( apiUrl + '/api/login',{
+                email, password
+           }
+              )
 
-            const res = await data.json();
-
-            if(res.status === 201){
+           const res = logdata.data;
+           console.log(res);
+            if(logdata.status === 201){
                 localStorage.setItem("usersdatatoken",res.result.token);
                 await DashboardValid();
                 setLocal(res.result.token);

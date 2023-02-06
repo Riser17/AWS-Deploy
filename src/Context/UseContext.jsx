@@ -1,7 +1,7 @@
 import {createContext, useState, useEffect} from 'react';
 import axios from 'axios'
 import {useNavigate} from "react-router-dom"
-const apiUrl = "https://54.160.72.194:9090"
+const apiUrl = "http://localhost:9090"
 
 export const UserContext = createContext();
 
@@ -63,14 +63,20 @@ const UserContextProvider =(props)=>{
     const DashboardValid = async () => {
 
         let token = localStorage.getItem("usersdatatoken");
-        const res = await fetch(apiUrl + "/api/validuser", {
-          method: "GET",
+        // const res = await fetch(apiUrl + "/api/validuser", {
+        //   method: "GET",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //     "Authorization": token
+        //   }
+        // });
+        const res= await axios.get(apiUrl + '/api/validuser', {
           headers: {
             "Content-Type": "application/json",
             "Authorization": token
-          }
-        });
-        const data = await res.json();
+          } 
+        })
+        const data = res.data;
     
         if (data.status === 401 || !data) {
       localStorage.removeItem("usersdatatoken");
