@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import {UserContext} from '../../Context/UseContext';
 import "../mix.css"
 
-const apiUrl = "http://localhost:9090"
+const apiUrl = "http://54.160.72.194:9090"
 
 const Login = ({setLocal}) => {
     const {DashboardValid, setLoginData } = useContext(UserContext);
